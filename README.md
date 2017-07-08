@@ -1,5 +1,5 @@
 # Sling
-License: LGPLv3/CC BY-SA 3.0
+License: LGPLv3/CC BY-SA 3.0. Sounds derivates from [speedygonzo](https://freesound.org/people/speedygonzo/sounds/257654/).
 
 ![Screenshot](https://github.com/tacotexmex/sling/raw/master/screenshot.png "Screenshot")
 
