@@ -17,7 +17,7 @@ throwing.register_bow("sling:sling", {
     end
   end,
   spawn_arrow_entity = function(pos, arrow, player)
-    local obj = minetest.add_entity(pos, "sling:sling_entity")
+    local obj = minetest.add_entity(pos, "sling:sling_entity", tostring(sling_sneak))
     obj:set_properties{
       textures = {arrow},
     }
@@ -32,8 +32,11 @@ minetest.register_entity("sling:sling_entity", throwing.make_arrow_def{
   target = throwing.target_node,
   on_hit_sound = "",
   on_throw_sound = "",
+  on_activate = function(self, staticdata)
+          self.sneak = staticdata == "true"
+  end,
   on_hit = function(self, pos, last_pos, node, object, hitter, data)
-    if sling_sneak == true then
+    if self.sneak then
       data.itemstack:set_count(1)
     end
     minetest.spawn_item(
