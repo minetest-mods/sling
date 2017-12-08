@@ -62,6 +62,15 @@ if mobs ~= nil and mobs.mod == "redo" then
   		{"farming:cotton", "mobs:leather", "farming:cotton"}
   	}
   })
+elseif minetest.get_modpath("mcl_core") ~= nil then
+  minetest.register_craft({
+    output = "sling:sling",
+    recipe = {
+      {"mcl_mobitems:string", "", "mcl_mobitems:string"},
+      {"mcl_mobitems:string", "", "mcl_mobitems:string"},
+      {"mcl_mobitems:string", "mcl_mobitems:leather", "mcl_mobitems:string"}
+    }
+  })
 else
   minetest.register_craft({
     output = "sling:sling",
