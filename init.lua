@@ -53,16 +53,7 @@ minetest.register_entity("sling:sling_entity", throwing.make_arrow_def{
   end
 })
 
-if mobs ~= nil and mobs.mod == "redo" then
-  minetest.register_craft({
-  	output = "sling:sling",
-  	recipe = {
-  		{"farming:cotton", "", "farming:cotton"},
-  		{"farming:cotton", "", "farming:cotton"},
-  		{"farming:cotton", "mobs:leather", "farming:cotton"}
-  	}
-  })
-elseif minetest.get_modpath("mcl_core") ~= nil then
+if minetest.get_modpath("mcl_core") ~= nil then
   minetest.register_craft({
     output = "sling:sling",
     recipe = {
@@ -70,6 +61,15 @@ elseif minetest.get_modpath("mcl_core") ~= nil then
       {"mcl_mobitems:string", "", "mcl_mobitems:string"},
       {"mcl_mobitems:string", "mcl_mobitems:leather", "mcl_mobitems:string"}
     }
+  })
+elseif mobs ~= nil and mobs.mod == "redo" then
+  minetest.register_craft({
+  	output = "sling:sling",
+  	recipe = {
+  		{"farming:cotton", "", "farming:cotton"},
+  		{"farming:cotton", "", "farming:cotton"},
+  		{"farming:cotton", "mobs:leather", "farming:cotton"}
+  	}
   })
 else
   minetest.register_craft({
